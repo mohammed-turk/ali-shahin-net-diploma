@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace GetStarted.classTest
 {
+    
     internal class Class1
     {
+        static void Main(string[] args) {
+            Console.WriteLine("Hello from GetStarted.classTest.Class1.Main");
+        }
+
     }
 }
