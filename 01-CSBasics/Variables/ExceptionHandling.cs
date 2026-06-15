@@ -25,6 +25,11 @@ namespace Variables
             try {
                 int nAge = Convert.ToInt32(Console.ReadLine());
             }
+            catch (FormatException ex){
+                Console.WriteLine
+
+                    ("Please enter an integer number. " + ex.Message);
+            }
             catch(Exception ex) { 
                 Console.WriteLine("An error occurred: " + ex.Message);
             }
