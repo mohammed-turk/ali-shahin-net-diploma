@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Variables
 {
-    public class PrintFullName
+    internal class PrintFullName
     {
         static public void PrintingFullName() {
             Console.WriteLine("Welcome to the full name application");
@@ -15,7 +15,7 @@ namespace Variables
             string sFirstName = Console.ReadLine();
             Console.WriteLine("Enter your Last name:");
             string sLastName = Console.ReadLine();
-            Console.WriteLine(sFirstName + " " + sLastName);
+            Console.WriteLine("Hello, " + sFirstName + " " + sLastName);
         }
     }
 }

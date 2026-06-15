@@ -101,6 +101,7 @@
 
             
             PrintFullName.PrintingFullName();
+            SumTwoNumbers.SummingTwoNumbers();
 
 
         }
@@ -173,5 +174,20 @@
         }
 
 
+    }
+
+    internal class SumTwoNumbers()
+    {
+        static public void SummingTwoNumbers()
+        {
+            Console.WriteLine("Welcome to the sum of two numbers application");
+
+            Console.WriteLine("Enter the first number:");
+            int num1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter the second number");
+            int num2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Summation is " + (num1 + num2));
+        }
     }
 }
