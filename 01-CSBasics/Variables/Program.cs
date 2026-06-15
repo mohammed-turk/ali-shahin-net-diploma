@@ -64,7 +64,7 @@
             decimal num11 = 5m;
             Console.WriteLine(decimal.MinValue);
             Console.WriteLine(decimal.MaxValue);
-            
+
             // logical
             bool isTrue = true;
             //char
@@ -97,6 +97,10 @@
 
             ValueType();
             ReferanceType();
+            DynamicType();
+
+            
+            PrintFullName.PrintingFullName();
 
 
         }
@@ -124,10 +128,50 @@
 
         static void ReferanceType()
         {
-            int[] arr1 = new int[] { 1, 2, 3 };
+
+            int[] arr1 = new int[3] { 1, 2, 3 };
             int[] arr2 = arr1; // arr2 is now referencing the same array as arr1
             arr1[0] = 10; // changing the first element of the array through arr1
             Console.WriteLine(arr2[0]); // output: 10, because arr2 is referencing the same array as arr1
+
+            int[] arr4 = new int[2];
+            int[] arr3 = { 1, 2, 3 };
         }
+
+        static void NullableValues()
+        {
+            // value types (all types except the classes, arraylist, strings, and the delegates) need to be nullable for allowing null values.
+            Nullable<int> x = null;
+            int? y = null; // this is a shorthand for Nullable<int>
+            //int h = x + y //is wrong
+            int? h = x + y; // this is correct
+        }
+
+        static void DynamicType()
+        {
+            object oMyObj = 5;
+            Console.WriteLine(oMyObj.GetType()); // output: 5
+            oMyObj = 'c';
+            Console.WriteLine(oMyObj.GetType()); // output: c
+            oMyObj = "Hello";
+            Console.WriteLine(oMyObj.GetType());
+
+            dynamic num11 = 5;
+            Console.WriteLine(num11.GetType());
+            num11 = 'c';
+            Console.WriteLine(num11.GetType());
+            num11 = "Hello";
+            Console.WriteLine(num11.GetType());
+
+            //dynamic vs object vs var
+            // dynamic skiped on compiling and transleted on the run time
+            // object sat its value on compilation time
+            // both are allowing the type to be change
+            // var allowing assign any type but don't allow its changes
+
+            // performance wise var is the best then the object then the dynamic
+        }
+
+
     }
 }
