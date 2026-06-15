@@ -5,103 +5,104 @@
         int x = 5; // this variable is accessible within the entire class
         static void Main(string[] args)
         {
-            int x = 5; // this variable is only accessible within this method, it is a local variable
+            //int x = 5; // this variable is only accessible within this method, it is a local variable
 
-            // built in Variables
+            //// built in Variables
 
-            //numeric
-            Console.WriteLine("------ sbyte ---------");
-            sbyte num1 = -5;
-            Console.WriteLine(sbyte.MinValue);
-            Console.WriteLine(sbyte.MaxValue);
+            ////numeric
+            //Console.WriteLine("------ sbyte ---------");
+            //sbyte num1 = -5;
+            //Console.WriteLine(sbyte.MinValue);
+            //Console.WriteLine(sbyte.MaxValue);
 
-            Console.WriteLine("------ byte ---------");
-            byte num2 = 5;
-            Console.WriteLine(byte.MinValue);
-            Console.WriteLine(byte.MaxValue);
+            //Console.WriteLine("------ byte ---------");
+            //byte num2 = 5;
+            //Console.WriteLine(byte.MinValue);
+            //Console.WriteLine(byte.MaxValue);
 
-            Console.WriteLine("------ short ---------");
-            short num3 = 5;
-            Console.WriteLine(short.MinValue);
-            Console.WriteLine(short.MaxValue);
+            //Console.WriteLine("------ short ---------");
+            //short num3 = 5;
+            //Console.WriteLine(short.MinValue);
+            //Console.WriteLine(short.MaxValue);
 
-            Console.WriteLine("------ ushort ---------");
-            ushort num4 = 5;
-            Console.WriteLine(ushort.MinValue);
-            Console.WriteLine(ushort.MaxValue);
+            //Console.WriteLine("------ ushort ---------");
+            //ushort num4 = 5;
+            //Console.WriteLine(ushort.MinValue);
+            //Console.WriteLine(ushort.MaxValue);
 
-            Console.WriteLine("------ int ---------");
-            int num5 = 5;
-            Console.WriteLine(int.MinValue);
-            Console.WriteLine(int.MaxValue);
+            //Console.WriteLine("------ int ---------");
+            //int num5 = 5;
+            //Console.WriteLine(int.MinValue);
+            //Console.WriteLine(int.MaxValue);
 
-            Console.WriteLine("------ uint ---------");
-            uint num6 = 5;
-            Console.WriteLine(uint.MinValue);
-            Console.WriteLine(uint.MaxValue);
+            //Console.WriteLine("------ uint ---------");
+            //uint num6 = 5;
+            //Console.WriteLine(uint.MinValue);
+            //Console.WriteLine(uint.MaxValue);
 
-            Console.WriteLine("------ long ---------");
-            long num7 = 5;
-            Console.WriteLine(long.MinValue);
-            Console.WriteLine(long.MaxValue);
+            //Console.WriteLine("------ long ---------");
+            //long num7 = 5;
+            //Console.WriteLine(long.MinValue);
+            //Console.WriteLine(long.MaxValue);
 
-            Console.WriteLine("------ ulong ---------");
-            ulong num8 = 5;
-            Console.WriteLine(ulong.MinValue);
-            Console.WriteLine(ulong.MaxValue);
+            //Console.WriteLine("------ ulong ---------");
+            //ulong num8 = 5;
+            //Console.WriteLine(ulong.MinValue);
+            //Console.WriteLine(ulong.MaxValue);
 
-            Console.WriteLine("------ float ---------");
-            float num9 = 5f;
-            Console.WriteLine(float.MinValue);
-            Console.WriteLine(float.MaxValue);
+            //Console.WriteLine("------ float ---------");
+            //float num9 = 5f;
+            //Console.WriteLine(float.MinValue);
+            //Console.WriteLine(float.MaxValue);
 
-            Console.WriteLine("------ double ---------");
-            double num10 = 5d;
-            Console.WriteLine(double.MinValue);
-            Console.WriteLine(double.MaxValue);
+            //Console.WriteLine("------ double ---------");
+            //double num10 = 5d;
+            //Console.WriteLine(double.MinValue);
+            //Console.WriteLine(double.MaxValue);
 
-            Console.WriteLine("------ decimal ---------");
-            decimal num11 = 5m;
-            Console.WriteLine(decimal.MinValue);
-            Console.WriteLine(decimal.MaxValue);
+            //Console.WriteLine("------ decimal ---------");
+            //decimal num11 = 5m;
+            //Console.WriteLine(decimal.MinValue);
+            //Console.WriteLine(decimal.MaxValue);
 
-            // logical
-            bool isTrue = true;
-            //char
-            char char1 = 'A';
-            // strings
-            string str1 = "Hello World";
-            // datatime
-            DateTime date1 = DateTime.Now;
-            //object
-            object obj1 = new object();
+            //// logical
+            //bool isTrue = true;
+            ////char
+            //char char1 = 'A';
+            //// strings
+            //string str1 = "Hello World";
+            //// datatime
+            //DateTime date1 = DateTime.Now;
+            ////object
+            //object obj1 = new object();
 
-            // start with these for variables naming and capatalized the next words:
-            // n for numbers
-            // b for boolean
-            // c for char
-            // s for string
-            // dt for datetime
-            // o for object
+            //// start with these for variables naming and capatalized the next words:
+            //// n for numbers
+            //// b for boolean
+            //// c for char
+            //// s for string
+            //// dt for datetime
+            //// o for object
 
-            // implicitly typed variable, the compiler will determine the type based on the value assigned to it
-            var num12 = 5; // this will be an int, type determined with first initalization, after assigning a value, you can't change its type.
-            // var cannot be sent as method parameters while the object can be.
-            scoping();
+            //// implicitly typed variable, the compiler will determine the type based on the value assigned to it
+            //var num12 = 5; // this will be an int, type determined with first initalization, after assigning a value, you can't change its type.
+            //// var cannot be sent as method parameters while the object can be.
+            //scoping();
 
-            // var can be initalized as annonymous user defined datatype.
-            var myVar = new { Name = "John", Age = 30 }; // this is an anonymous type with two properties: Name and Age
-            Console.WriteLine(myVar.Name); // output: John
-            Console.WriteLine(myVar.Age); // output: 30
-            // myVar.Name = "Jane"; // error: cannot modify the properties of an anonymous type, they are read-only
+            //// var can be initalized as annonymous user defined datatype.
+            //var myVar = new { Name = "John", Age = 30 }; // this is an anonymous type with two properties: Name and Age
+            //Console.WriteLine(myVar.Name); // output: John
+            //Console.WriteLine(myVar.Age); // output: 30
+            //// myVar.Name = "Jane"; // error: cannot modify the properties of an anonymous type, they are read-only
 
-            ValueType();
-            ReferanceType();
-            DynamicType();
+            //ValueType();
+            //ReferanceType();
+            //DynamicType();
 
             
-            PrintFullName.PrintingFullName();
-            SumTwoNumbers.SummingTwoNumbers();
+            //PrintFullName.PrintingFullName();
+            //SumTwoNumbers.SummingTwoNumbers();
+            ExceptionHandling.ThreeExptions();
 
 
         }
@@ -184,6 +185,8 @@
 
             Console.WriteLine("Enter the first number:");
             int num1 = Convert.ToInt32(Console.ReadLine());
+            num1 = (short) num1;
+            num1 = byte.Parse(num1.ToString()); // parse accept string input only
 
             Console.WriteLine("Enter the second number");
             int num2 = Convert.ToInt32(Console.ReadLine());
