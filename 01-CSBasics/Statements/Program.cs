@@ -47,7 +47,8 @@
             //LogicalOperators();
             //StudentGrades();
             //Taxes();
-            NumerClassification();
+            //NumberClassification();
+            Compare3Numbers();
 
         }
 
@@ -183,12 +184,53 @@
             Console.WriteLine("Your taxes is: " + takes);
 
         }
-        static void NumerClassification()
+        static void NumberClassification()
         {
             Console.WriteLine("Enter a number: ");
-            int nNumber = Convert.ToInt32(Console.ReadLine());
+
+            double nNumber = 0;
+            bool isValid = double.TryParse(Console.ReadLine(), out nNumber);
+            if (!isValid)
+            {
+                Console.WriteLine("Invalid input. Please enter a valid number.");
+                return;
+            }
+
             string classification = (nNumber <0 ) ? "Negative" : (nNumber > 0) ? "Positive" : "Zero";
             Console.WriteLine("The number is: " + classification);
+        }
+        static void Compare3Numbers() { 
+
+        Console.WriteLine("Enter first number: ");
+            int nNum1 = 0;
+        bool bNum1IsValid = int.TryParse(Console.ReadLine(), out nNum1);
+        if (!bNum1IsValid) { 
+            Console.WriteLine("Invalid num1 input. Please enter a valid number.");
+            return;
+            }
+
+            Console.WriteLine("Enter second number: ");
+            int nNum2 = 0;
+            bool bNum2IsValid = int.TryParse(Console.ReadLine(), out nNum2);
+            if (!bNum2IsValid)
+            {
+                Console.WriteLine("Invalid num2 input. Please enter a valid number.");
+                return;
+            }
+
+
+            Console.WriteLine("Enter third number: ");
+            int nNum3 = 0;
+            bool bNum3IsValid = int.TryParse(Console.ReadLine(), out nNum3);
+            if (!bNum3IsValid)
+            {
+                Console.WriteLine("Invalid num3 input. Please enter a valid number.");
+                return;
+            }
+            string result = (nNum1 > nNum2 && nNum1 > nNum3) ? "num1 is the largest" : (nNum2 > nNum1 && nNum2 > nNum3) ? "num2 is the largest" : (nNum3 > nNum1 && nNum3 > nNum2) ? "num3 is the largest" : "There is a tie";
+
+            Console.WriteLine(result );
+
         }
     }
 }
