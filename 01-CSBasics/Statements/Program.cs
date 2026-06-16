@@ -51,7 +51,12 @@
             //Compare3Numbers();
 
             //SwitchExample();
-            SwitchWithCalculater();
+            //SwitchWithCalculater();
+            //WhileExample();
+            //SummingSuccessiveNumbers();
+            //backwordSummingFrom100To0();
+            MultplicationTable();
+
         }
 
         static void ArthmeticOperators()
@@ -181,7 +186,7 @@
             int ntype = 0;
             bool isValidType = int.TryParse(Console.ReadLine(), out ntype);
 
-            double takes = (nIncome <10000)? 0: ( ntype == 1) ? 1000 : nIncome * 0.20;
+            double takes = (nIncome < 10000) ? 0 : (ntype == 1) ? 1000 : nIncome * 0.20;
 
             Console.WriteLine("Your taxes is: " + takes);
 
@@ -198,17 +203,19 @@
                 return;
             }
 
-            string classification = (nNumber <0 ) ? "Negative" : (nNumber > 0) ? "Positive" : "Zero";
+            string classification = (nNumber < 0) ? "Negative" : (nNumber > 0) ? "Positive" : "Zero";
             Console.WriteLine("The number is: " + classification);
         }
-        static void Compare3Numbers() { 
+        static void Compare3Numbers()
+        {
 
-        Console.WriteLine("Enter first number: ");
+            Console.WriteLine("Enter first number: ");
             int nNum1 = 0;
-        bool bNum1IsValid = int.TryParse(Console.ReadLine(), out nNum1);
-        if (!bNum1IsValid) { 
-            Console.WriteLine("Invalid num1 input. Please enter a valid number.");
-            return;
+            bool bNum1IsValid = int.TryParse(Console.ReadLine(), out nNum1);
+            if (!bNum1IsValid)
+            {
+                Console.WriteLine("Invalid num1 input. Please enter a valid number.");
+                return;
             }
 
             Console.WriteLine("Enter second number: ");
@@ -231,33 +238,38 @@
             }
             string result = (nNum1 > nNum2 && nNum1 > nNum3) ? "num1 is the largest" : (nNum2 > nNum1 && nNum2 > nNum3) ? "num2 is the largest" : (nNum3 > nNum1 && nNum3 > nNum2) ? "num3 is the largest" : "There is a tie";
 
-            Console.WriteLine(result );
+            Console.WriteLine(result);
 
         }
 
-        static void SwitchExample() { 
-        // usually used with menu using switches and ifs inside each others
+        static void SwitchExample()
+        {
+            // usually used with menu using switches and ifs inside each others
 
-        Console.Clear(); // clearing the mess of the terminal to look better when many things are ptinted
-        int nNum1 = 0;
-        switch (nNum1)
+            Console.Clear(); // clearing the mess of the terminal to look better when many things are ptinted
+            int nNum1 = 0;
+            switch (nNum1)
             {
                 case 0:
                     Console.WriteLine("Num1 is zero");
                     break;
-                case 1: Console.WriteLine("Num1 is one");
+                case 1:
+                    Console.WriteLine("Num1 is one");
                     break;
-                case 2: Console.WriteLine("Num1 is two");
+                case 2:
+                    Console.WriteLine("Num1 is two");
                     break;
-                default: Console.WriteLine("Num1 is not zero, one, or two");
+                default:
+                    Console.WriteLine("Num1 is not zero, one, or two");
                     break;
             }
         }
 
-        static void SwitchWithCalculater() {
+        static void SwitchWithCalculater()
+        {
             Console.WriteLine("Enter first number");
             int nNum1 = 0;
-            bool bNum1 = int.TryParse (Console.ReadLine(), out nNum1);  
+            bool bNum1 = int.TryParse(Console.ReadLine(), out nNum1);
 
             if (!bNum1)
             {
@@ -277,22 +289,108 @@
 
             Console.WriteLine("Enter +, -, *, /, or %");
             string sOperator = Console.ReadLine();
-            switch (sOperator) { 
-            case "+": 
-                Console.WriteLine("Result is: " + (nNum1 + nNum2));
-                break;
-            case "-":
-                Console.WriteLine("Result is: " + (nNum1 - nNum2));
-                break;
-            case "*": Console.WriteLine("Result is " + (nNum1 * nNum2));
+            switch (sOperator)
+            {
+                case "+":
+                    Console.WriteLine("Result is: " + (nNum1 + nNum2));
                     break;
-            case "/": Console.WriteLine("Result is " + (nNum1 / nNum2));
-                    break; 
-            case "%": Console.WriteLine("Result is " + (nNum1 % nNum2));
+                case "-":
+                    Console.WriteLine("Result is: " + (nNum1 - nNum2));
+                    break;
+                case "*":
+                    Console.WriteLine("Result is " + (nNum1 * nNum2));
+                    break;
+                case "/":
+                    Console.WriteLine("Result is " + (nNum1 / nNum2));
+                    break;
+                case "%":
+                    Console.WriteLine("Result is " + (nNum1 % nNum2));
                     break;
             }
 
 
+        }
+        static void WhileExample()
+        {
+            Console.WriteLine("Enter a number: ");
+            double nnum1 = Convert.ToInt32(Console.ReadLine());
+            bool exist = false;
+            char exiting = 'A';
+            while (!exist)
+            {
+                Console.WriteLine("The number over 3 is " + (nnum1 / 3));
+                --nnum1;
+
+                if (nnum1 == 0)
+                {
+
+                    Console.WriteLine("do you wanna exit? Y or N");
+                    exiting = Convert.ToChar(Console.ReadLine());
+                    if (exiting == 'Y' || exiting == 'y')
+                    {
+
+                        exist = true;
+                        Console.WriteLine("bye");
+
+                    }
+                    else if (exiting == 'N' || exiting == 'n')
+                    {
+                        Console.WriteLine("Enter another number:");
+                        nnum1 = Convert.ToInt32(Console.ReadLine());
+                    }
+
+
+                }
+
+            }
+        }
+
+        static void SummingSuccessiveNumbers()
+        {
+            int sum = 0;
+            Console.WriteLine("Enter first number: ");
+            int firstNum = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter last number: ");
+            int lasttNum = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter the  increment: ");
+            int incrementtNum = Convert.ToInt32(Console.ReadLine());
+            for (int i = firstNum; i <= lasttNum; i += incrementtNum)
+            {
+                sum += i;
+            }
+
+            Console.WriteLine("Summation from 1 to 10 is: " + sum);
+        }
+
+        static void backwordSummingFrom100To0()
+        {
+            int sUm = 0;
+            int oddSum = 0;
+            int evenSum = 0;
+
+            for (int i = 100; i >= 1; i--) {
+                sUm += i;
+                if(i % 2 == 0)
+                    oddSum += i;
+                else evenSum += i;
+
+            }
+            Console.WriteLine("Summition is: " + sUm + " odd sum is: " + oddSum + " even sum is: " + evenSum); 
+        }
+
+        static void MultplicationTable() { 
+            Console.WriteLine("Enter a number to print its multiplication table: ");
+            int nNum = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter the last multiplication to the number: ");
+            int nLastNum = Convert.ToInt32(Console.ReadLine());
+
+            for (int j = 1; j <= nLastNum; j++) {
+                Console.WriteLine(nNum+ " * " + j + " = " + (nNum * j));
+            
+            }
         }
     }
 }
