@@ -48,8 +48,10 @@
             //StudentGrades();
             //Taxes();
             //NumberClassification();
-            Compare3Numbers();
+            //Compare3Numbers();
 
+            //SwitchExample();
+            SwitchWithCalculater();
         }
 
         static void ArthmeticOperators()
@@ -230,6 +232,66 @@
             string result = (nNum1 > nNum2 && nNum1 > nNum3) ? "num1 is the largest" : (nNum2 > nNum1 && nNum2 > nNum3) ? "num2 is the largest" : (nNum3 > nNum1 && nNum3 > nNum2) ? "num3 is the largest" : "There is a tie";
 
             Console.WriteLine(result );
+
+        }
+
+        static void SwitchExample() { 
+        // usually used with menu using switches and ifs inside each others
+
+        Console.Clear(); // clearing the mess of the terminal to look better when many things are ptinted
+        int nNum1 = 0;
+        switch (nNum1)
+            {
+                case 0:
+                    Console.WriteLine("Num1 is zero");
+                    break;
+                case 1: Console.WriteLine("Num1 is one");
+                    break;
+                case 2: Console.WriteLine("Num1 is two");
+                    break;
+                default: Console.WriteLine("Num1 is not zero, one, or two");
+                    break;
+            }
+        }
+
+        static void SwitchWithCalculater() {
+            Console.WriteLine("Enter first number");
+            int nNum1 = 0;
+            bool bNum1 = int.TryParse (Console.ReadLine(), out nNum1);  
+
+            if (!bNum1)
+            {
+                Console.WriteLine("invalid number");
+                return;
+            }
+
+            Console.WriteLine("Enter second number");
+            int nNum2 = 0;
+            bool bNum2 = int.TryParse(Console.ReadLine(), out nNum2);
+
+            if (!bNum2)
+            {
+                Console.WriteLine("invalid number");
+                return;
+            }
+
+            Console.WriteLine("Enter +, -, *, /, or %");
+            string sOperator = Console.ReadLine();
+            switch (sOperator) { 
+            case "+": 
+                Console.WriteLine("Result is: " + (nNum1 + nNum2));
+                break;
+            case "-":
+                Console.WriteLine("Result is: " + (nNum1 - nNum2));
+                break;
+            case "*": Console.WriteLine("Result is " + (nNum1 * nNum2));
+                    break;
+            case "/": Console.WriteLine("Result is " + (nNum1 / nNum2));
+                    break; 
+            case "%": Console.WriteLine("Result is " + (nNum1 % nNum2));
+                    break;
+            }
+
 
         }
     }
