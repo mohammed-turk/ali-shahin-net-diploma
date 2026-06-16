@@ -45,7 +45,8 @@
             //ArthmeticOperators();
             //RelationalOperators();
             //LogicalOperators();
-            StudentGrades();
+            //StudentGrades();
+            Taxes();
 
         }
 
@@ -87,15 +88,17 @@
             // && and || are better than | and & as they shortened the evaluation which help in performance.
         }
 
-        static void StudentGrades() {
+        static void StudentGrades()
+        {
 
             Console.WriteLine("Enter your grade:");
-            int grade = Convert.ToInt32( Console.ReadLine() );
+            int grade = Convert.ToInt32(Console.ReadLine());
             if (grade >= 95 && grade <= 100)
             {
                 Console.WriteLine("You got A+");
             }
-            else if (grade >= 90 && grade < 95) {
+            else if (grade >= 90 && grade < 95)
+            {
                 Console.WriteLine("You got A");
             }
             else if (grade >= 85 && grade < 90)
@@ -131,6 +134,53 @@
                 Console.WriteLine("Grade value should be between 0 and 100");
 
             }
+        }
+
+        static void Taxes()
+        {
+            //Console.WriteLine("Enter your income: ");
+            //double nIncome = 0;
+            //bool nIsValid = double.TryParse(Console.ReadLine(), out nIncome);
+
+            //if (nIsValid)
+            //{
+            //    Console.WriteLine("Enter 1 if you are an employee or 2 if you are a buisness man: ");
+            //    int ntype = 0;
+            //    bool isValidType = int.TryParse(Console.ReadLine(), out ntype);
+
+            //    if (isValidType) {
+            //        if (nIncome <= 10000 && nIncome > 0)
+            //        {
+            //            Console.WriteLine("Your taxes is 1000");
+
+            //        }
+            //        else { 
+            //            Console.WriteLine("Your taxes is: " + nIncome*0.20);
+            //        }
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Invalid input. Please enter 1 for employee");
+            //    }
+
+            //    }
+            //else
+            //{
+            //    Console.WriteLine("Invalid input. Please enter a valid number for the income.");
+            //}
+
+            // short hand if
+            Console.WriteLine("Enter your income: ");
+            double nIncome = 0;
+            bool nIsValid = double.TryParse(Console.ReadLine(), out nIncome);
+            Console.WriteLine("Enter 1 if you are an employee or 2 if you are a buisness man: ");
+            int ntype = 0;
+            bool isValidType = int.TryParse(Console.ReadLine(), out ntype);
+
+            double takes = (nIncome <10000)? 0: ( ntype == 1) ? 1000 : nIncome * 0.20;
+
+            Console.WriteLine("Your taxes is: " + takes);
+
         }
     }
 }
