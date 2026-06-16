@@ -46,7 +46,8 @@
             //RelationalOperators();
             //LogicalOperators();
             //StudentGrades();
-            Taxes();
+            //Taxes();
+            NumerClassification();
 
         }
 
@@ -181,6 +182,13 @@
 
             Console.WriteLine("Your taxes is: " + takes);
 
+        }
+        static void NumerClassification()
+        {
+            Console.WriteLine("Enter a number: ");
+            int nNumber = Convert.ToInt32(Console.ReadLine());
+            string classification = (nNumber <0 ) ? "Negative" : (nNumber > 0) ? "Positive" : "Zero";
+            Console.WriteLine("The number is: " + classification);
         }
     }
 }
