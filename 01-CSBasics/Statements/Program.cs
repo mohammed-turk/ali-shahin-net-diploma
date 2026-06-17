@@ -388,6 +388,15 @@
             int nLastNum = Convert.ToInt32(Console.ReadLine());
 
             for (int j = 1; j <= nLastNum; j++) {
+
+                //continue (skip) and break(exit the loop) used inside the loops and switches.
+                //return exit the method.
+                if (j == 3)
+                    continue;
+                if (j == 1000)
+                    break;
+                if (j == 2000)
+                    return;
                 Console.WriteLine(nNum+ " * " + j + " = " + (nNum * j));
             
             }
