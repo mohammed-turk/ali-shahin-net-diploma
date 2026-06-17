@@ -11,10 +11,11 @@ namespace Arrays
             //GetMaxValueFromArray();
             //DuplicatesWithForEach();
             //ArrayReverse();
-            ArrayOperations();
+            DimensionalArrays();
         }
 
-        static void ArraysDeclarings() {
+        static void ArraysDeclarings()
+        {
             int[] a1 = new int[] { 1, 2, 3 };
 
             int[] a2 = new int[3];
@@ -28,7 +29,7 @@ namespace Arrays
                 a3[i] = a1[i];
             }
 
-            for (int i = 0; i <3; i++)
+            for (int i = 0; i < 3; i++)
             {
                 Console.WriteLine($"a1 of {i} is {a1[i]}");
                 Console.WriteLine($"a2 of {i} is {a2[i]}");
@@ -38,7 +39,8 @@ namespace Arrays
 
         }
 
-        static void GetMaxValueFromArray() {
+        static void GetMaxValueFromArray()
+        {
             Console.WriteLine("welcome to the max value on the array application");
 
             Console.WriteLine("Ente the array size: ");
@@ -59,18 +61,20 @@ namespace Arrays
             }
             Console.WriteLine($"max value is: {max}");
         }
-        static void DuplicatesWithForEach() {
+        static void DuplicatesWithForEach()
+        {
             int[] arr1 = { 1, 2, 2, 3, 2 };
             int countDuplicates = 0;
-            
 
-            foreach (int number in arr1) { 
-             if(number == 2)
+
+            foreach (int number in arr1)
+            {
+                if (number == 2)
                     countDuplicates++;
             }
 
             Console.WriteLine("2 has " + countDuplicates + " duplicates");
-        
+
         }
 
         static void ArrayReverse()
@@ -80,14 +84,15 @@ namespace Arrays
             int count = 0;
 
             // choosed for instead of forEach as we need a counter
-            for(int i = temp.Length - 1; i >= 0; i--)
+            for (int i = temp.Length - 1; i >= 0; i--)
             {
                 temp[i] = arr1[count];
                 count++;
             }
             arr1 = temp;
             Console.Write("Array in reverse is: ");
-            foreach (int number in arr1) {
+            foreach (int number in arr1)
+            {
                 Console.Write(number);
             }
 
@@ -111,23 +116,47 @@ namespace Arrays
             }
 
         }
-        static void ArrayOperations() { 
-        // do not use them untill you reach asp.net
-        int[] arr1 = { 1,2, 3, 4, 5, 6, 7, 8 };
-        Array.Clear(arr1);
-        Console.WriteLine();
-        arr1 = new int[] { 1,2,3,4,5,6,7,8};
+        static void ArrayMethods()
+        {
+            // do not use them untill you reach asp.net
+            int[] arr1 = { 1, 2, 3, 4, 5, 6, 7, 8 };
+            Array.Clear(arr1);
+            Console.WriteLine();
+            arr1 = new int[] { 1, 2, 3, 4, 5, 6, 7, 8 };
 
-        int x = Array.Find(arr1, a=> a == 2);
-        int[] y = Array.FindAll(arr1, a=> a == 3);
-        var z = Array.FindAll(arr1, a => a == 4);
+            int x = Array.Find(arr1, a => a == 2);
+            int[] y = Array.FindAll(arr1, a => a == 3);
+            var z = Array.FindAll(arr1, a => a == 4);
 
-        int[] arr2 = (int[]) arr1.Clone();
-        Array.Sort(arr2);
-        Array.Reverse(arr2);
-        Console.WriteLine();
-        
+            int[] arr2 = (int[])arr1.Clone();
+            Array.Sort(arr2);
+            Array.Reverse(arr2);
+            Console.WriteLine();
+
 
         }
+
+        static void DimensionalArrays()
+        {
+            int[] oneDim = new int[2] { 1, 2 };
+            oneDim[0] = 5;
+
+            int[,] twoDim = new int[2, 2] { { 1, 2 }, { 3, 4 } };
+            twoDim[0, 0] = 5;
+
+            for (int i = 0; i < 2; i++)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    twoDim[i, j] = i + j;
+                    Console.Write(twoDim[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+
+            int[,,] threeDim = new int[2, 3, 2] { { { 1, 2 }, { 3, 4 }, { 5, 6 } }, { { 7, 8 }, { 9, 10 }, { 11, 12 } } };
+            threeDim[0, 0, 0] = 5;
+        }
+
     }
 }
